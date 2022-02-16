@@ -53,9 +53,47 @@ const cars = [
     { make: 'Tesla', yrsOld: 3, mileage: 57720 }
 ];
 
-    const results = cars.filter(function(car){
+    const wellDrivenCars = cars.filter(function(car){
         return car.mileage > 20000
     }); 
 
-    console.log(results); 
+    console.log(wellDrivenCars); 
+
+
+
+// Question #3 
+
+wellDrivenCars.forEach(function(car){
+    console.log(car)
+})
+
+// Synchronous Code Execution
+
+const colors = ['red','green','blue']; 
+
+console.log('Code before the forEach')
+
+colors.forEach(function(color, idx){
+    console.log(`${idx + 1} - ${color}`);
+}); 
+
+console.log('Code after the forEach'); 
+
+// Asynchronous Code Execution
+
+const colors = ['red','green','blue']; 
+
+console.log('Code before the forEach....'); 
+
+// setTimeOut accepts a callback & how long to wait before calling the cb 
+
+setTimeout(function(){
+    colors.forEach(function(color, idx){
+        console.log(`${idx + 1} - ${color}`); 
+    });
+
+}), 1000 //setting the time to 1000 milliseconds 
+
+
+console.log('Code AFTER the forEach...');
 
